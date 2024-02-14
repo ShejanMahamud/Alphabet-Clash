@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alphabet Clash</title>
+    <!-- css link -->
+    <link rel="stylesheet" href="./styles/main.css" />
+    <!-- favicon link -->
+    <link
+      rel="shortcut icon"
+      href="./assets/icons/play.png"
+      type="image/x-icon"
+    />
+    <!-- google fonts link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- links are end -->
+  </head>
+  <body class="w-full h-auto bg-[#1e1e1e]">
+    <!-- main section -->
+    <main
+      class="w-full bg-[url(../assets/images/background.svg)] min-h-screen bg-no-repeat bg-center"
+    >
+      <!-- home screen -->
+      <section
+        class="flex items-center justify-center min-h-screen"
+        id="home-screen"
+      >
+        <div class="flex flex-col items-center justify-center gap-8">
+          <h1
+            class="uppercase text-9xl text-white font-anton tracking-[0.3rem]"
+          >
+            Alphabet Clash
+          </h1>
+          <p class="font-poppins text-white font-medium text-lg text-center">
+            Unleash Your Keyboard Kung Fu : Press “Enter” to Play
+          </p>
+          <button
+            class="px-6 py-2 bg-white text-[#1e1e1e] rounded-md font-medium"
+            id="home-btn"
+          >
+            Play Now
+          </button>
+        </div>
+      </section>
+      <!-- playground section -->
+      <section
+        class="w-full flex items-center flex-col gap-10 min-h-screen hidden"
+        id="playground-screen"
+      >
+        <!-- screen section -->
+        <div
+          class="border-[20px] border-[#010313cc] rounded-2xl w-[70%] mx-auto h-[350px] overflow-hidden bg-[#ffffffb3] flex flex-col items-center mt-10"
+        >
+          <span
+            class="bg-[#010313cc] text-xs px-5 pb-[6px] rounded-br-md rounded-bl-md text-center text-white font-medium font-poppins flex items-center justify-center"
+            >Don't watch keyboard while playing...</span
+          >
+          <div
+            class="flex justify-center items-center h-full w-full px-10 mx-auto text-8xl font-poppins font-semibold text-[#1e1e1e]"
+          >
+            <p id="screen"></p>
+          </div>
+        </div>
+        <!-- keyboard section -->
+        <div>
+          <div class="flex justify-center gap-2 my-2 w-full font-inter">
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium" id="q"
+              >q</kbd
+            >
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">w</kbd>
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">e</kbd>
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">r</kbd>
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">t</kbd>
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">y</kbd>
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">u</kbd>
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">i</kbd>
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">o</kbd>
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">p</kbd>
+          </div>
+          <div class="flex justify-center gap-2 my-2 w-full font-inter">
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">a</kbd>
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">s</kbd>
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">d</kbd>
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">f</kbd>
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">g</kbd>
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">h</kbd>
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">j</kbd>
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">k</kbd>
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">l</kbd>
+          </div>
+          <div class="flex justify-center gap-2 my-2 w-full font-inter">
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">z</kbd>
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">x</kbd>
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">c</kbd>
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">v</kbd>
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">b</kbd>
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">n</kbd>
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">m</kbd>
+            <kbd class="kbd kbd-lg bg-white text-[#1e1e1e] font-medium">/</kbd>
+          </div>
+        </div>
+        <!-- btns -->
+        <div
+          class="flex items-center justify-between w-[90%] mx-auto font-inter mb-5"
+        >
+          <button
+            class="flex items-center gap-2 bg-[#894189] px-7 py-3 rounded-3xl text-white relative overflow-hidden"
+          >
+            <img
+              src="./assets/images/btn-shadow.svg"
+              alt="btn-shadow.svg"
+              class="absolute top-0 left-0"
+            />
+            <span class="font-medium">Life</span>
+            <img src="./assets/icons/life.svg" alt="life.png" />
+            <span>1</span>
+          </button>
+          <button
+            class="flex items-center gap-2 bg-[#360490] px-7 py-3 rounded-3xl text-white relative overflow-hidden"
+          >
+            <img
+              src="./assets/images/btn-shadow.svg"
+              alt="btn-shadow.svg"
+              class="absolute top-0 left-0"
+            />
+            <span class="font-medium">Score</span>
+            <img src="./assets/icons/point.svg" alt="score.png" />
+            <span>1</span>
+          </button>
+        </div>
+      </section>
+      <!-- score section -->
+      <section
+        class="min-h-screen flex items-center justify-center font-poppins hidden"
+      >
+        <div
+          class="px-16 py-10 rounded-lg border border-[#ffffff33] flex flex-col items-center gap-3 relative overflow-hidden"
+          style="
+            background: linear-gradient(
+              136.67deg,
+              rgba(255, 255, 255, 0.56) 0%,
+              rgba(152, 151, 151, 0) 102.037%
+            );
+          "
+        >
+          <img
+            src="./assets/images/shadow.svg"
+            alt="shadow.png"
+            class="absolute top-0 left-0"
+          />
+          <p class="text-5xl font-bold text-white">
+            Score: <span class="font-medium">14</span>
+          </p>
+          <button
+            class="px-6 py-2 bg-white text-[#1e1e1e] rounded-md font-medium"
+          >
+            Play Now
+          </button>
+          <p class="font-medium text-white text-sm">
+            Practice will make you Pro
+          </p>
+        </div>
+      </section>
+    </main>
+    <!-- js file link -->
+    <script src="./js/script.js"></script>
+  </body>
+</html>
